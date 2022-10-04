@@ -30,6 +30,7 @@ option_list <- list(
     make_option("--mu", type="character", default=NULL, help="--mu", metavar="character"),
     make_option("--sig2", type="character", default=NULL, help="--sig2", metavar="character"),
     make_option("--bound_inf", type="character", default=NULL, help="--bound_inf", metavar="character"),
+    make_option("--bound_sup", type="character", default=NULL, help="--bound_sup", metavar="character"),
     make_option("--alpha", type="character", default=NULL, help="--alpha", metavar="character"),
     make_option("--theta", type="character", default=NULL, help="--theta", metavar="character"),
     make_option("--nsim", type="character", default=NULL, help="--nsim", metavar="character"),
