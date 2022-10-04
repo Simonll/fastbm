@@ -20,7 +20,7 @@ main <- function(opt) {
 
 
 write_f <- function(df, output) {
-    write_feather(x = as.data.frame(df), sink = output, version = 2)
+    write_feather(x = as.data.frame(df, row.names = row.names(df)), sink = output, version = 2)
 }
 
 option_list <- list(
