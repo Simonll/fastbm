@@ -8,14 +8,13 @@ library("optparse")
 main <- function(opt) {
 
     tree <- ape::read.tree(opt$tree)
-    df_bm_simu <- as.data.frame(
-        fastBM(
+    df_bm_simu <- fastBM(
             tree=tree,
             a=as.double(opt$a),
             sig2=as.double(opt$sig2),
             bounds=c(as.double(opt$bound_inf),as.double(opt$bound_sup)),
             nsim=as.integer(opt$nsim))
-            )
+            
     write_f(df=df_bm_simu, output=opt$output)
 }
 
