@@ -1,5 +1,5 @@
 library("arrow")
-library("phylotools")
+library("phytools")
 library("ape")
 library("optparse")
 
