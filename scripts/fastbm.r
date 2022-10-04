@@ -9,18 +9,18 @@ main <- function(opt) {
 
     tree <- ape::read.tree(opt$tree)
     df_bm_simu <- fastBM(
-            tree=tree,
-            a=as.double(opt$a),
-            sig2=as.double(opt$sig2),
-            bounds=c(as.double(opt$bound_inf),as.double(opt$bound_sup)),
-            nsim=as.integer(opt$nsim))
-            
-    write_f(df=df_bm_simu, output=opt$output)
+            tree = tree,
+            a = as.double(opt$a),
+            sig2 = as.double(opt$sig2),
+            bounds = c(as.double(opt$bound_inf), as.double(opt$bound_sup)),
+            nsim = as.integer(opt$nsim))
+    print(df_bm_simu)
+    write_f(df = df_bm_simu, output = opt$output)
 }
 
 
 write_f <- function(df, output) {
-    write_feather(x = as.data.frame(df),sink = output, version=2)
+    write_feather(x = as.data.frame(df), sink = output, version = 2)
 }
 
 option_list <- list(
@@ -39,9 +39,9 @@ option_list <- list(
 opt_parser <- OptionParser(option_list=option_list)
 opt <- parse_args(opt_parser)
 
-if (is.null(opt$tree)){
+if (is.null(opt$tree)) {
   print_help(opt_parser)
-   stop("", call.=FALSE)
+   stop("", call. = FALSE)
 }
 
-main(opt=opt)
+main(opt = opt)
