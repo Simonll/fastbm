@@ -14,13 +14,13 @@ main <- function(opt) {
             sig2 = as.double(opt$sig2),
             bounds = c(as.double(opt$bound_inf), as.double(opt$bound_sup)),
             nsim = as.integer(opt$nsim))
-    print(df_bm_simu)
-    write_f(df = df_bm_simu, output = opt$output)
+    species_id <- row.names(df_bm_simu)
+    write_f(df = cbind(species_id, df_bm_simu), output = opt$output)
 }
 
 
 write_f <- function(df, output) {
-    write_feather(x = as.data.frame(df, row.names = row.names(df)), sink = output, version = 2)
+    write_feather(x = as.data.frame(df), sink = output, version = 2)
 }
 
 option_list <- list(
